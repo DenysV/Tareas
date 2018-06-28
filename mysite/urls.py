@@ -16,7 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from django.views.generic import RedirectView
+urlpatterns += [
+    path('', RedirectView.as_view(url='/catalog/', permanent=True)),
+]
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('tarea.urls')),
+    url(r'^accounts/', include('django.contrib.auth.urls'))
 ]
