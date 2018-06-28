@@ -8,7 +8,7 @@
             </div>
         {% endif %}
         {% if user.is_authenticated %}
-          <a class = "btn btn-default" href = "{% url 'tarea_edit' pk = tarea.pk %}"><span class = "glyphicon glyphicon-pencil"></span></a>
+          <a class = "btn btn-default" href="{% url 'tarea_edit' pk=tarea.pk %}"><span class = "glyphicon glyphicon-pencil"></span></a>
         {% endif %}
         <p>{{ tarea.author }}</p>
         <h1>{{ tarea.text|linebreaksbr }}</h1>

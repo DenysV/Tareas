@@ -1,10 +1,24 @@
 {% extends 'tarea/main.html' %}
 
 {% block content %}
-    {% for tarea in tareas %}
-      <div class = "page-header">
-        <!--p class = "date">created: {{ tarea.created_date }} by {{ tarea.author }}<p-->
-        <h1><a href="{% url 'tarea_edit' pk=tarea.pk %}">{{ tarea.text}}</a><h1>
-      </div>
-    {% endfor %}
+<table>
+  <thead>
+    <tr>
+      <th class="col-sm-9">Tarea</th>
+      <th>Autor</th>
+      <th>Duración</th>
+      <th>Tiempo creado</th>
+    </tr>
+  </thead>
+  {% for tarea in tareas %}
+  <tbody>
+    <tr>
+      <td><a href="{% url 'tarea_detail' pk=tarea.pk %}">{{ tarea.text }}</a></td>
+      <td>{{ tarea.duration }}</td>
+      <td>{{ tarea.author }}</td>
+      <td>{{ tarea.created_date }}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
 {% endblock %}
