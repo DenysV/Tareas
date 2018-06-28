@@ -1,0 +1,10 @@
+{% extends 'tarea/main.html' %}
+
+{% block content %}
+    {% for tarea in tareas %}
+      <div class = "page-header">
+        <p class = "date">created: {{ tarea.created_date }} by {{ tarea.author }}<p>
+        <h1><a href="">{{ tarea.text}}</a><h1>
+      </div>
+    {% endfor %}
+{% endblock %}

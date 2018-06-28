@@ -1,0 +1,13 @@
+{% extends 'tarea/main.html' %}
+
+{% block content %}
+    <div>
+        {% if tarea.created_date %}
+            <div class="date">
+                {{ tarea.created_date }}
+            </div>
+        {% endif %}
+        <p>{{ tarea.author }}</p>
+        <h1>{{ tarea.text|linebreaksbr }}</h1>
+    </div>
+{% endblock %}
